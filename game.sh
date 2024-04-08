@@ -4,6 +4,7 @@ current_path=$(pwd)
 have_weapon=false
 have_key=false
 cd Start_game
+echo "You are in a maze. You need a weapon and a key to escape the maze. Try to look very hard to find them"
 
 function check_directory {
     
@@ -27,7 +28,10 @@ function check_directory {
         echo "You found a key!"
         have_key=true
     fi  
+    if [[ $PWD == "${current_path}/Start_game/right" ]]; then
+        echo "There is nothing here or is it?"
 
+    fi
     if [[ $PWD == "${current_path}/Start_game/left/straight" ]]; then
         echo "You encounter a trap! You are injured. Sending you back to start."
         cd ${current_path}/Start_game
